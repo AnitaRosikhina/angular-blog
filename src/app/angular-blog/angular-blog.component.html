@@ -1,0 +1,41 @@
+<header class="header">
+  <div>
+    <h4 class="text-white">Angular Blog</h4>
+  </div>
+  <div class="btn-group" role="group">
+    <button
+      type="button"
+      class="btn btn-outline-success"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >Sing In
+    </button>
+<!--    <button type="button" class="btn btn-outline-primary">Middle</button>-->
+    <button type="button" class="btn btn-outline-primary">Sing Up</button>
+  </div>
+</header>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form class="modal-content" [formGroup]="form" (ngSubmit)="singIn()">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sing In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <span>Email</span>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div>
+          <span>Password</span>
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success" [disabled]="form.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
